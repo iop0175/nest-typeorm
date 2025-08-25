@@ -12,7 +12,7 @@ export class UserService {
         @InjectRepository(User)
        private userRepository: Repository<User>,
     ) {}
-    async findByFields(option:FindOneOptions<UserDTO>):Promise<UserDTO|null>{
+    async findByFields(option:FindOneOptions<User>):Promise<User|null>{
         return await this.userRepository.findOne(option);
     }
     async save(UserDTO:UserDTO):Promise<UserDTO | null>{
